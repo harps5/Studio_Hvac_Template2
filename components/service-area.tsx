@@ -16,7 +16,7 @@ export function ServiceArea() {
             on load. Outside the radius? Call us — we will tell you honestly.
           </p>
 
-          <ul role="list" className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
+          <ul role="list" className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
             {site.serviceArea.map((c) => (
               <li
                 key={c.name}
@@ -37,7 +37,7 @@ export function ServiceArea() {
         {/* Stylised regional map — abstract, not cartographic.
             Positions are visually approximated; this is not a navigation tool. */}
         <div className="lg:col-span-7">
-          <div className="aspect-[3/2] rounded-card-lg border border-ink-700 p-6 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.04),_transparent_75%)]">
+          <div className="aspect-[3/2] rounded-card-lg border border-ink-700 p-6 bg-ink-900">
             <svg
               viewBox="0 0 600 400"
               className="w-full h-full text-white"

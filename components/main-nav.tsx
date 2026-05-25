@@ -46,7 +46,7 @@ export function MainNav() {
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-2">
           <a href="#book" className="btn-secondary-light">Book Service</a>
-          <a href="#quote" className="btn-primary">Get a Quote</a>
+          <a href="#book" className="btn-primary">Get a Quote</a>
         </div>
 
         {/* Mobile call + menu */}
@@ -54,7 +54,7 @@ export function MainNav() {
           <a
             href={`tel:${site.business.phoneE164}`}
             aria-label={`Call ${site.business.phone}`}
-            className="btn-primary h-11 min-w-0 px-4"
+            className="btn-primary h-12 min-w-0 px-4"
           >
             <Phone className="h-4 w-4" aria-hidden="true" />
             <span>Call</span>
@@ -65,7 +65,7 @@ export function MainNav() {
             aria-controls="mobile-nav"
             aria-label={open ? 'Close menu' : 'Open menu'}
             onClick={() => setOpen((v) => !v)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-pill border-[1.5px] border-ink"
+            className="inline-flex h-12 w-12 items-center justify-center rounded-pill border-[1.5px] border-ink"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -94,7 +94,7 @@ export function MainNav() {
           ))}
           <li className="pt-4 flex flex-col gap-2">
             <a href="#book" onClick={() => setOpen(false)} className="btn-secondary-light">Book Service</a>
-            <a href="#quote" onClick={() => setOpen(false)} className="btn-primary">Get a Quote</a>
+            <a href="#book" onClick={() => setOpen(false)} className="btn-primary">Get a Quote</a>
           </li>
         </ul>
       </div>

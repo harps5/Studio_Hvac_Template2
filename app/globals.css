@@ -34,6 +34,18 @@ body {
   border-radius: 2px;
 }
 
+/* ─── Details / FAQ ─────────────────────────────────────────────────────── */
+
+/* Hide the default disclosure triangle on <details> so our custom plus icon
+   is the only affordance. Safari uses a webkit pseudo; modern Chrome/Firefox
+   respect list-style on the summary itself (handled via Tailwind list-none). */
+summary::-webkit-details-marker {
+  display: none;
+}
+summary {
+  list-style: none;
+}
+
 /* ─── Reusable atoms ────────────────────────────────────────────────────── */
 
 @layer components {

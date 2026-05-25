@@ -8,11 +8,11 @@ export function Services() {
         <div className="max-w-2xl">
           <p className="eyebrow">What we do</p>
           <h2 className="font-display text-display-section uppercase mt-4">
-            Complete home comfort solutions
+            Heating, cooling, hot water, air quality.
           </h2>
           <p className="mt-6 text-lg text-muted">
-            One licensed local team for heating, cooling, hot water, and air
-            quality — across {site.business.address.city} and Southern Alberta.
+            One licensed local team for the four things that keep a Southern
+            Alberta home running. Same crew installs it. Same crew services it.
           </p>
         </div>
 

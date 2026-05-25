@@ -17,8 +17,8 @@ import { site } from '@/config/site';
  */
 export function Hero() {
   return (
-    <section className="relative bg-ink-800 text-white overflow-hidden">
-      <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-12 py-16 md:py-24 lg:py-32 items-center">
+    <section className="relative bg-ink-800 text-white overflow-hidden lg:min-h-[calc(100svh-96px)] flex items-center">
+      <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-12 py-16 md:py-24 lg:py-32 items-center w-full">
         {/* Copy */}
         <div className="lg:col-span-7">
           {/* Trust pill */}
@@ -56,7 +56,7 @@ export function Hero() {
           </p>
 
           {/* Binary CTA */}
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
+          <div className="mt-12 flex flex-col sm:flex-row gap-4">
             <a href="#book" className="btn-primary">Book Service</a>
             <a
               href={`tel:${site.business.phoneE164}`}
@@ -80,7 +80,7 @@ export function Hero() {
           <div
             role="img"
             aria-label="Branded service van — placeholder"
-            className="relative aspect-[16/10] rounded-card-lg border border-ink-700 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.04),_transparent_70%)]"
+            className="relative aspect-[16/10] rounded-card-lg border border-ink-700 bg-ink-900"
           >
             <div className="absolute inset-0 flex items-center justify-center px-8 text-center">
               <div>

@@ -13,23 +13,15 @@ const config: Config = {
     './lib/**/*.{ts,tsx}',
   ],
   theme: {
-    // Reset spacing scale to the locked 4/8/16/24/32/48/64/96/128/192 px scale.
-    // Tailwind defaults are intentionally discarded so an engineer can't reach
-    // for `py-12` (48) vs `py-14` (56) and quietly break rhythm.
-    spacing: {
-      0: '0px',
-      px: '1px',
-      1: '4px',
-      2: '8px',
-      4: '16px',
-      6: '24px',
-      8: '32px',
-      12: '48px',
-      16: '64px',
-      24: '96px',
-      32: '128px',
-      48: '192px',
-    },
+    // CONVENTION (not a hard lock):
+    // Layout rhythm — section padding, gaps between sections, gaps between
+    // cards — should snap to the Birchmont locked scale:
+    //   4 / 8 / 16 / 24 / 32 / 48 / 64 / 96 / 128 / 192
+    // In Tailwind tokens that's p/m/gap-{1, 2, 4, 6, 8, 12, 16, 24, 32, 48}.
+    // Tailwind's default scale is retained so icon sizes, small chrome paddings,
+    // and ad-hoc utility gaps still resolve. The locked scale is a discipline,
+    // enforced in review — not by erasing valid tokens at the config layer
+    // (which we tried, then reverted: it broke icon dimensions). See DECISIONS §4.
     extend: {
       colors: {
         ink: {

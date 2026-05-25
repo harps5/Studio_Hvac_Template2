@@ -39,7 +39,7 @@ export function Faq() {
                     <Plus className="h-5 w-5" />
                   </span>
                 </summary>
-                <p className="pb-6 pr-14 text-muted leading-relaxed">
+                <p className="pb-6 pr-12 text-muted leading-relaxed">
                   {item.answer}
                 </p>
               </details>

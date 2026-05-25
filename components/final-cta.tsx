@@ -14,8 +14,11 @@ export function FinalCta() {
           Same-day repair on most calls across {site.business.address.city} and
           Southern Alberta. Book online or call — we always answer.
         </p>
-        <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#quote" className="btn-primary">Book Service</a>
+        <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+          {/* TODO (client onboarding): replace href with the live booking
+              system URL (Jobber, ServiceTitan, Housecall Pro, etc.). Leaving
+              as a self-anchor for now so the link is never broken. */}
+          <a href="#book" className="btn-primary">Book Service</a>
           <a href={`tel:${site.business.phoneE164}`} className="btn-secondary-dark">
             <Phone className="h-4 w-4" aria-hidden="true" />
             Call {site.business.phone}
