@@ -20,13 +20,13 @@ export function ServiceArea() {
             {site.serviceArea.map((c) => (
               <li
                 key={c.name}
-                className="flex items-baseline justify-between border-b border-ink-700 pb-3"
+                className="flex flex-col gap-1 border-b border-ink-700 pb-3"
               >
                 <span className="flex items-center gap-2 font-display text-xl uppercase tracking-wide">
                   <MapPin className="h-4 w-4 text-accent" aria-hidden="true" />
                   {c.name}
                 </span>
-                <span className="text-xs font-semibold tracking-[0.18em] uppercase text-muted-dark">
+                <span className="pl-6 text-xs font-semibold tracking-[0.18em] uppercase text-muted-dark">
                   {c.responseTime}
                 </span>
               </li>
