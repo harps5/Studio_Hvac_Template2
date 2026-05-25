@@ -37,7 +37,7 @@ export function Hero() {
           </p>
 
           {/* Headline */}
-          <h1 className="font-display text-display-hero uppercase mt-6">
+          <h1 className="font-display text-display-hero uppercase mt-8 max-w-[18ch]">
             Heating, Cooling &amp;
             <br />
             Indoor Air Quality
@@ -48,7 +48,7 @@ export function Hero() {
           </h1>
 
           {/* Subhead */}
-          <p className="mt-8 max-w-prose text-lg leading-relaxed text-muted-dark">
+          <p className="mt-12 max-w-prose text-lg leading-relaxed text-muted-dark">
             Red Seal certified technicians and TECA members serving homeowners
             and small commercial across Southern Alberta. Furnace, A/C, heat
             pump, and indoor air quality — quoted flat, installed clean, backed

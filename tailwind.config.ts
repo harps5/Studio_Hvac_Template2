@@ -49,8 +49,14 @@ const config: Config = {
         sans: ['var(--font-body)', 'Inter Tight', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        // Hero headline ramp — locked. Use these classes, not arbitrary text-[].
-        'display-hero': ['clamp(40px, 8vw, 96px)', { lineHeight: '0.95', letterSpacing: '-0.02em' }],
+        // Hero headline ramp.
+        // Sized to the floor of the brief's 64-96px desktop range: at a 7/5 grid
+        // split, a 96px cap caused the three-line stack with the location phrase
+        // to feel crowded in its column. 64px max keeps the wordmark register
+        // without crowding the third line, and reads as "calm" rather than
+        // "shouting" alongside the trust pill and subhead. Line-height bumped
+        // 0.95 → 1.0 for the same reason.
+        'display-hero': ['clamp(40px, 5.5vw, 64px)', { lineHeight: '1.0', letterSpacing: '-0.02em' }],
         'display-section': ['clamp(32px, 5vw, 56px)', { lineHeight: '1.0', letterSpacing: '-0.01em' }],
         'display-sub': ['clamp(24px, 3vw, 40px)', { lineHeight: '1.1', letterSpacing: '-0.01em' }],
         'display-stat': ['clamp(40px, 6vw, 72px)', { lineHeight: '1', letterSpacing: '-0.02em' }],
