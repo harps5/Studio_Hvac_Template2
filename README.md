@@ -4,7 +4,7 @@ A production-grade Next.js 14 template for residential HVAC service
 businesses. Designed to be cloned and content-swapped per client via
 a single config file.
 
-Placeholder client throughout: **Coulee HVAC** (Lethbridge AB).
+Placeholder client throughout: **Coulee HVAC** (Toronto ON).
 
 ---
 

@@ -20,7 +20,7 @@ One image per service card, slug matches the entry in `site.services`:
 
 - `furnace.jpg` — close detail on an installed high-efficiency furnace
   unit, no people, branded service tag visible
-- `ac.jpg` — exterior condenser unit on a Lethbridge home pad, clean
+- `ac.jpg` — exterior condenser unit on a Toronto-area home pad, clean
 - `heat-pump.jpg` — outdoor heat pump in winter conditions (snow OK)
 - `tankless.jpg` — wall-mounted tankless unit, clean copper, no clutter
 - `iaq.jpg` — HRV/ERV unit or media filter cabinet, clean room context
@@ -41,7 +41,7 @@ the licensed real logo** before launch:
 | `lennox.svg`      | Lennox Premier Dealer co-marketing kit (via dealer rep)                         |
 | `bbb.svg`         | Better Business Bureau accredited business badge generator                      |
 | `hrai.svg`        | Heating Refrigeration and Air Conditioning Institute of Canada (member portal)  |
-| `worksafe.svg`    | WorkSafe Alberta logo guidelines (Government of Alberta)                        |
+| `wsib.svg`        | WSIB Ontario logo (Workplace Safety and Insurance Board)                        |
 
 Render in greyscale at 60% opacity (handled in component). Real logos
 keep their official aspect ratios — placeholders are sized 160×60.

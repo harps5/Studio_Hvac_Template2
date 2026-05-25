@@ -11,8 +11,8 @@ export function FinalCta() {
           <span className="text-accent">We&rsquo;re an hour away.</span>
         </h2>
         <p className="mt-6 text-lg text-muted-dark">
-          Same-day repair on most calls across {site.business.address.city} and
-          Southern Alberta. Book online or call — we always answer.
+          Same-day repair on most calls across {site.business.address.city} and{' '}
+          {site.business.serviceRegion}. Book online or call — we always answer.
         </p>
         <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
           {/* TODO (client onboarding): replace href with the live booking

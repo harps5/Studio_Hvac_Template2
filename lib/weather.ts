@@ -17,13 +17,14 @@ export interface LocalWeather {
 
 export async function getLocalWeather(): Promise<LocalWeather | null> {
   const { lat, lng } = site.business.address;
+  const { timezone } = site.business;
 
   const url =
     `https://api.open-meteo.com/v1/forecast` +
     `?latitude=${lat}` +
     `&longitude=${lng}` +
     `&current=temperature_2m,weather_code` +
-    `&timezone=America/Edmonton`;
+    `&timezone=${encodeURIComponent(timezone)}`;
 
   try {
     const res = await fetch(url, { next: { revalidate: 600 } });

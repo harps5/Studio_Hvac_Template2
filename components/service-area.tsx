@@ -8,7 +8,7 @@ export function ServiceArea() {
         <div className="lg:col-span-5">
           <p className="eyebrow">Service area</p>
           <h2 className="font-display text-display-section uppercase mt-4">
-            Serving Southern Alberta
+            Serving {site.business.serviceRegion}
           </h2>
           <p className="mt-6 text-lg text-muted-dark max-w-prose">
             Same-day service within {site.business.address.city} city limits.
@@ -42,7 +42,7 @@ export function ServiceArea() {
               viewBox="0 0 600 400"
               className="w-full h-full text-white"
               role="img"
-              aria-label="Service area map showing Lethbridge and surrounding communities"
+              aria-label={`Service area map showing ${site.business.address.city} and surrounding communities`}
             >
               {/* Abstract regional shape */}
               <path
@@ -53,7 +53,7 @@ export function ServiceArea() {
                 strokeOpacity="0.18"
               />
 
-              {/* ~50km service radius */}
+              {/* ~40km service radius from downtown */}
               <circle
                 cx="300"
                 cy="220"
@@ -65,34 +65,36 @@ export function ServiceArea() {
                 strokeDasharray="5 6"
               />
 
-              {/* Cities */}
+              {/* Cities — positions hand-placed to roughly mirror GTA geography
+                  (Toronto center, Etobicoke W, North York N, Scarborough E,
+                  Mississauga SW, Vaughan NNW). Not cartographic. */}
               <g fontFamily="Inter Tight, sans-serif" fontSize="12" textAnchor="middle">
-                {/* Lethbridge anchor */}
+                {/* Toronto anchor */}
                 <circle cx="300" cy="220" r="8" fill="#C2410C" />
                 <circle cx="300" cy="220" r="14" fill="none" stroke="#C2410C" strokeOpacity="0.4" />
                 <text x="300" y="250" fontWeight="700" fill="#FFFFFF" letterSpacing="2">
-                  LETHBRIDGE
+                  TORONTO
                 </text>
 
-                {/* Coaldale (ENE) */}
-                <circle cx="370" cy="206" r="3" fill="#FFFFFF" />
-                <text x="370" y="198" fill="#9CA3AF">Coaldale</text>
+                {/* Etobicoke (W) */}
+                <circle cx="220" cy="230" r="3" fill="#FFFFFF" />
+                <text x="220" y="222" fill="#9CA3AF">Etobicoke</text>
 
-                {/* Taber (E) */}
-                <circle cx="495" cy="194" r="3" fill="#FFFFFF" />
-                <text x="495" y="186" fill="#9CA3AF">Taber</text>
+                {/* Scarborough (E) */}
+                <circle cx="395" cy="205" r="3" fill="#FFFFFF" />
+                <text x="395" y="197" fill="#9CA3AF">Scarborough</text>
 
-                {/* Fort Macleod (W) */}
-                <circle cx="170" cy="208" r="3" fill="#FFFFFF" />
-                <text x="170" y="200" fill="#9CA3AF">Fort Macleod</text>
+                {/* North York (N) */}
+                <circle cx="305" cy="155" r="3" fill="#FFFFFF" />
+                <text x="305" y="147" fill="#9CA3AF">North York</text>
 
-                {/* Picture Butte (N) */}
-                <circle cx="288" cy="135" r="3" fill="#FFFFFF" />
-                <text x="288" y="127" fill="#9CA3AF">Picture Butte</text>
+                {/* Mississauga (SW) */}
+                <circle cx="135" cy="275" r="3" fill="#FFFFFF" />
+                <text x="135" y="295" fill="#9CA3AF">Mississauga</text>
 
-                {/* Raymond (S) */}
-                <circle cx="320" cy="310" r="3" fill="#FFFFFF" />
-                <text x="320" y="330" fill="#9CA3AF">Raymond</text>
+                {/* Vaughan (NNW) */}
+                <circle cx="275" cy="95" r="3" fill="#FFFFFF" />
+                <text x="275" y="87" fill="#9CA3AF">Vaughan</text>
               </g>
             </svg>
           </div>

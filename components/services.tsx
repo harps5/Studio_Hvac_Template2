@@ -11,8 +11,9 @@ export function Services() {
             Heating, cooling, hot water, air quality.
           </h2>
           <p className="mt-6 text-lg text-muted">
-            One licensed local team for the four things that keep a Southern
-            Alberta home running. Same crew installs it. Same crew services it.
+            One licensed local team for the four things that keep a{' '}
+            {site.business.regionName} home running. Same crew installs it.
+            Same crew services it.
           </p>
         </div>
 

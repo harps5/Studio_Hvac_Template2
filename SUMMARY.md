@@ -127,12 +127,13 @@ b4c85c7 feat: config-driven site + Google Reviews + weather + layout
 ## Done benchmark
 
 Per brief: "A Lethbridge homeowner sees this site next to Reliance,
-Enercare, and a [cut off]…"
+Enercare, and a [cut off]…" *(Placeholder relocated to Toronto post-build;
+the comparison logic holds for any market.)*
 
 What this template does to win that comparison: locality-bearing H1,
-real Lethbridge weather as social proof of liveness, plain-language
-pricing card with the $129 diagnostic fee disclosed upfront, named
-certifications (Red Seal, TECA), named response times per community,
-no chat widget, no popup. The visual language is closer to Vertex /
-Hoffmann than to the local-search-template look the competitors
-default to.
+real local weather as social proof of liveness, plain-language pricing
+card with the $129 diagnostic fee disclosed upfront, named
+certifications (Red Seal, TECA, WSIB), named response times per
+community, no chat widget, no popup. The visual language is closer to
+Vertex / Hoffmann than to the local-search-template look the
+competitors default to.

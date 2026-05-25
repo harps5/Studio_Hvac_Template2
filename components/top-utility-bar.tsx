@@ -16,7 +16,7 @@ export function TopUtilityBar() {
           </span>
         </a>
         <span className="hidden md:inline text-muted-dark">
-          {site.business.address.city} &amp; Southern Alberta
+          {site.business.address.city} &amp; {site.business.serviceRegion}
         </span>
       </div>
     </div>

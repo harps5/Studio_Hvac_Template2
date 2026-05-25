@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   description:
     `Furnace, air conditioning, heat pump, and indoor air quality service across ` +
-    `${site.business.address.city} and Southern Alberta. ${site.business.hours.emergency}. ` +
+    `${site.business.address.city} and ${site.business.serviceRegion}. ${site.business.hours.emergency}. ` +
     `Book online or call ${site.business.phone}.`,
   applicationName: site.business.name,
   authors: [{ name: site.business.legalName }],
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: site.business.name,
     title: `${site.business.name} — Heating, Cooling & IAQ`,
-    description: `Trusted HVAC service across ${site.business.address.city} and Southern Alberta.`,
+    description: `Trusted HVAC service across ${site.business.address.city} and ${site.business.serviceRegion}.`,
   },
   twitter: {
     card: 'summary_large_image',

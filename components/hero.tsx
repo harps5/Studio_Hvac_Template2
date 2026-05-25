@@ -24,7 +24,7 @@ export function Hero() {
           {/* Trust pill */}
           <p
             className="inline-flex items-center gap-2 rounded-pill border-[1.5px] border-accent px-4 py-2"
-            aria-label="Lethbridge's trusted HVAC specialists"
+            aria-label={site.business.tagline}
           >
             <span className="flex items-center gap-0.5 text-accent" aria-hidden="true">
               {Array.from({ length: 5 }).map((_, i) => (
@@ -43,16 +43,16 @@ export function Hero() {
             Indoor Air Quality
             <br />
             <span className="text-accent">
-              in {site.business.address.city} &amp; Southern Alberta
+              in {site.business.address.city} &amp; {site.business.serviceRegion}
             </span>
           </h1>
 
           {/* Subhead */}
           <p className="mt-12 max-w-prose text-lg leading-relaxed text-muted-dark">
             Red Seal certified technicians and TECA members serving homeowners
-            and small commercial across Southern Alberta. Furnace, A/C, heat
-            pump, and indoor air quality — quoted flat, installed clean, backed
-            in writing.
+            and small commercial across {site.business.serviceRegion}. Furnace,
+            A/C, heat pump, and indoor air quality — quoted flat, installed
+            clean, backed in writing.
           </p>
 
           {/* Binary CTA */}

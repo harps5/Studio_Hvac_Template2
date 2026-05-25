@@ -87,7 +87,7 @@ export function Footer() {
         <div className="container-x py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-muted-dark">
           <p>
             &copy; {new Date().getFullYear()} {site.business.legalName}. Licensed &amp;
-            insured in Alberta.
+            insured in {site.business.regionName}.
           </p>
           <p>
             Built by{' '}

@@ -217,3 +217,32 @@ Documented here so the next person knows what's intentionally absent:
 - **Multi-page sitemap.** `sitemap.ts` ships with only `/` because
   there is only one route. Expands automatically when the studio
   adds routes.
+
+---
+
+## 13. Post-build: placeholder relocated to Toronto, ON
+
+After the initial build the placeholder client was relocated from
+Lethbridge to Toronto. The change exposed several hardcoded location
+strings in components that should have been config-driven all along
+(`Southern Alberta` in `hero.tsx`, `services.tsx`, `final-cta.tsx`,
+`top-utility-bar.tsx`, `weather-strip.tsx`, `app/layout.tsx`;
+`Alberta` in `footer.tsx`; `America/Edmonton` hardcoded in
+`lib/weather.ts`). Treating the relocation as a template-hygiene
+opportunity, I added three new fields to `BusinessInfo`:
+
+- `timezone` — IANA string consumed by `lib/weather.ts`
+- `serviceRegion` — human phrase for body copy (`'the GTA'`,
+  `'Southern Alberta'`)
+- `regionName` — long province/state name for legal copy
+  (`'Ontario'`, `'Alberta'`)
+
+The map SVG in `components/service-area.tsx` had Lethbridge-area city
+positions hand-placed; redone with GTA positions. The historical
+references to "Lethbridge" and "WorkSafe Alberta" elsewhere in this
+file (and in the original brief quotes) are left intact as a record
+of where the build started.
+
+The WorkSafe Alberta placeholder trust logo was swapped for WSIB
+Ontario, which is the Ontario equivalent. `worksafe.svg` deleted,
+`wsib.svg` created, config entry + `public/README.md` updated.

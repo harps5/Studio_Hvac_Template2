@@ -39,7 +39,7 @@ export async function WeatherStrip() {
                 <span className="text-muted-dark"> — {weather.conditions}.</span>
               </>
             ) : (
-              <span className="font-semibold">{city} &amp; Southern Alberta.</span>
+              <span className="font-semibold">{city} &amp; {site.business.serviceRegion}.</span>
             )}
           </span>
         </p>

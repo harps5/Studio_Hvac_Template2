@@ -34,12 +34,20 @@ export interface BusinessInfo {
   address: {
     street: string;
     city: string;
-    region: string;
+    region: string;       // short code: 'AB', 'ON'
     postal: string;
     country: string;
     lat: number;
     lng: number;
   };
+  /** IANA timezone, e.g. 'America/Toronto'. Used by the weather lib. */
+  timezone: string;
+  /** Human-readable region phrase used in body copy.
+   *  e.g. 'Southern Alberta', 'the GTA', 'Vancouver Island'. */
+  serviceRegion: string;
+  /** Province/state long name used in legal copy.
+   *  e.g. 'Alberta', 'Ontario', 'British Columbia'. */
+  regionName: string;
   hours: Hours;
   social: {
     google?: string;
@@ -134,19 +142,22 @@ export const site: SiteConfig = {
   business: {
     name: 'Coulee HVAC',
     legalName: 'Coulee HVAC Ltd.',
-    tagline: "Lethbridge's trusted HVAC specialists",
-    phone: '(403) 555-0100',
-    phoneE164: '+14035550100',
+    tagline: "Toronto's trusted HVAC specialists",
+    phone: '(416) 555-0100',
+    phoneE164: '+14165550100',
     email: 'service@couleehvac.ca',
     address: {
-      street: '1234 3rd Avenue South',
-      city: 'Lethbridge',
-      region: 'AB',
-      postal: 'T1J 0M5',
+      street: '488 King Street West',
+      city: 'Toronto',
+      region: 'ON',
+      postal: 'M5V 1L9',
       country: 'CA',
-      lat: 49.6956,
-      lng: -112.8451,
+      lat: 43.6453,
+      lng: -79.4012,
     },
+    timezone: 'America/Toronto',
+    serviceRegion: 'the GTA',
+    regionName: 'Ontario',
     hours: {
       weekdays: 'Mon–Fri 7:00 AM – 7:00 PM',
       saturday: 'Sat 8:00 AM – 4:00 PM',
@@ -161,19 +172,19 @@ export const site: SiteConfig = {
   },
 
   serviceArea: [
-    { name: 'Lethbridge', responseTime: 'Same day' },
-    { name: 'Coaldale', responseTime: 'Same day' },
-    { name: 'Picture Butte', responseTime: 'Same day' },
-    { name: 'Raymond', responseTime: 'Next day available' },
-    { name: 'Taber', responseTime: 'Next day available' },
-    { name: 'Fort Macleod', responseTime: 'Next day available' },
+    { name: 'Toronto', responseTime: 'Same day' },
+    { name: 'Etobicoke', responseTime: 'Same day' },
+    { name: 'North York', responseTime: 'Same day' },
+    { name: 'Scarborough', responseTime: 'Same day' },
+    { name: 'Mississauga', responseTime: 'Next day available' },
+    { name: 'Vaughan', responseTime: 'Next day available' },
   ],
 
   services: [
     {
       slug: 'furnace',
       name: 'Furnace Installation & Repair',
-      summary: 'High-efficiency furnaces installed and serviced across Southern Alberta.',
+      summary: 'High-efficiency furnaces installed and serviced across the GTA.',
       bullets: [
         'High-efficiency gas furnace install (95%+ AFUE)',
         'Same-day repair on most makes and models',
@@ -184,7 +195,7 @@ export const site: SiteConfig = {
     {
       slug: 'central-ac',
       name: 'Central Air Conditioning',
-      summary: 'Quiet, efficient central A/C sized correctly for Lethbridge summers.',
+      summary: 'Quiet, efficient central A/C sized correctly for Toronto summers.',
       bullets: [
         'Manual J load calculation on every install',
         'Lennox, Carrier, and Goodman dealer',
@@ -195,7 +206,7 @@ export const site: SiteConfig = {
     {
       slug: 'heat-pump',
       name: 'Heat Pump Installation',
-      summary: 'Cold-climate heat pumps rated for Alberta winters — rebates available.',
+      summary: 'Cold-climate heat pumps rated for Ontario winters — rebates available.',
       bullets: [
         'Cold-climate models rated to −25 °C',
         'Federal Greener Homes rebate paperwork handled',
@@ -246,12 +257,12 @@ export const site: SiteConfig = {
     { name: 'Lennox Premier',    src: '/trust/lennox.svg',      alt: 'Lennox Premier Dealer' },
     { name: 'BBB A+',            src: '/trust/bbb.svg',         alt: 'Better Business Bureau A+ rating' },
     { name: 'HRAI',              src: '/trust/hrai.svg',        alt: 'Heating Refrigeration and Air Conditioning Institute of Canada' },
-    { name: 'WorkSafe Alberta',  src: '/trust/worksafe.svg',    alt: 'WorkSafe Alberta compliant' },
+    { name: 'WSIB Ontario',      src: '/trust/wsib.svg',        alt: 'WSIB (Workplace Safety and Insurance Board) Ontario compliant' },
   ],
 
   whyUsStats: [
     { value: '500+', label: 'Local installs' },
-    { value: '15+',  label: 'Years serving Southern Alberta' },
+    { value: '15+',  label: 'Years serving the GTA' },
     { value: '4.9★', label: 'Google rating (500+ reviews)' },
     { value: '24/7', label: 'Emergency response' },
   ],
@@ -310,11 +321,11 @@ export const site: SiteConfig = {
   faq: [
     {
       question: 'How fast can you respond to an emergency?',
-      answer: 'Most emergency calls within Lethbridge city limits are on-site within 2 hours. Outside city we target same-day; overnight calls always reach a live dispatcher, not an answering service.',
+      answer: 'Most emergency calls within Toronto are on-site within 2 hours. Across the broader GTA we target same-day; overnight calls always reach a live dispatcher, not an answering service.',
     },
     {
       question: 'Do you service my area?',
-      answer: 'We service Lethbridge, Coaldale, Picture Butte, Raymond, Taber, and Fort Macleod — roughly a 50 km radius from Lethbridge. If you are outside that radius, call us anyway. We can usually still help.',
+      answer: 'We service Toronto, Etobicoke, North York, Scarborough, Mississauga, and Vaughan — roughly a 40 km radius from downtown. If you are outside that radius, call us anyway. We can usually still help.',
     },
     {
       question: 'What brands do you install?',
@@ -330,7 +341,7 @@ export const site: SiteConfig = {
     },
     {
       question: 'How much does a new furnace cost?',
-      answer: 'A standard high-efficiency replacement in a typical Lethbridge home runs $5,800–$8,500 installed, depending on AFUE rating and size. We quote flat, in writing, before any work starts.',
+      answer: 'A standard high-efficiency replacement in a typical Toronto home runs $5,800–$8,500 installed, depending on AFUE rating and size. We quote flat, in writing, before any work starts.',
     },
   ],
 
@@ -344,7 +355,7 @@ export const site: SiteConfig = {
     {
       name: 'Janelle K.',
       rating: 5,
-      text: "Furnace quit at -28°C on a Saturday night. Their tech was at my door inside 90 minutes, had the ignitor swapped and us back up before midnight. Honest, polite, and didn't try to sell me anything I didn't need.",
+      text: "Furnace quit at -22°C on a Saturday night. Their tech was at my door inside 90 minutes, had the ignitor swapped and us back up before midnight. Honest, polite, and didn't try to sell me anything I didn't need.",
       date: '2026-01-18',
     },
     {
@@ -362,7 +373,7 @@ export const site: SiteConfig = {
     {
       name: 'Mike R.',
       rating: 5,
-      text: "Heat pump install on our acreage outside Coaldale. They handled all the Greener Homes rebate paperwork and we got the cheque within six weeks. Couldn't have made it easier.",
+      text: "Heat pump install on our property up in Vaughan. They handled all the Greener Homes rebate paperwork and we got the cheque within six weeks. Couldn't have made it easier.",
       date: '2026-02-14',
     },
     {
