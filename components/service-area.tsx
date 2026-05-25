@@ -67,34 +67,37 @@ export function ServiceArea() {
 
               {/* Cities — positions hand-placed to roughly mirror GTA geography
                   (Toronto center, Etobicoke W, North York N, Scarborough E,
-                  Mississauga SW, Vaughan NNW). Not cartographic. */}
+                  Mississauga SW, Vaughan NNW). Not cartographic.
+                  Dots are kept well inside the dashed service radius and labels
+                  have a 14px clearance from their dot so neither overlaps the
+                  radius circle, the anchor, or each other. */}
               <g fontFamily="Inter Tight, sans-serif" fontSize="12" textAnchor="middle">
                 {/* Toronto anchor */}
                 <circle cx="300" cy="220" r="8" fill="#C2410C" />
                 <circle cx="300" cy="220" r="14" fill="none" stroke="#C2410C" strokeOpacity="0.4" />
-                <text x="300" y="250" fontWeight="700" fill="#FFFFFF" letterSpacing="2">
+                <text x="300" y="252" fontWeight="700" fill="#FFFFFF" letterSpacing="2">
                   TORONTO
                 </text>
 
                 {/* Etobicoke (W) */}
-                <circle cx="220" cy="230" r="3" fill="#FFFFFF" />
-                <text x="220" y="222" fill="#9CA3AF">Etobicoke</text>
+                <circle cx="250" cy="230" r="3" fill="#FFFFFF" />
+                <text x="250" y="216" fill="#9CA3AF">Etobicoke</text>
 
                 {/* Scarborough (E) */}
-                <circle cx="395" cy="205" r="3" fill="#FFFFFF" />
-                <text x="395" y="197" fill="#9CA3AF">Scarborough</text>
+                <circle cx="370" cy="215" r="3" fill="#FFFFFF" />
+                <text x="370" y="201" fill="#9CA3AF">Scarborough</text>
 
                 {/* North York (N) */}
-                <circle cx="305" cy="155" r="3" fill="#FFFFFF" />
-                <text x="305" y="147" fill="#9CA3AF">North York</text>
+                <circle cx="305" cy="165" r="3" fill="#FFFFFF" />
+                <text x="305" y="151" fill="#9CA3AF">North York</text>
 
-                {/* Mississauga (SW) */}
-                <circle cx="135" cy="275" r="3" fill="#FFFFFF" />
-                <text x="135" y="295" fill="#9CA3AF">Mississauga</text>
+                {/* Mississauga (SW) — label below dot (city sits south-west of center) */}
+                <circle cx="225" cy="265" r="3" fill="#FFFFFF" />
+                <text x="225" y="287" fill="#9CA3AF">Mississauga</text>
 
-                {/* Vaughan (NNW) */}
-                <circle cx="275" cy="95" r="3" fill="#FFFFFF" />
-                <text x="275" y="87" fill="#9CA3AF">Vaughan</text>
+                {/* Vaughan (N) */}
+                <circle cx="270" cy="125" r="3" fill="#FFFFFF" />
+                <text x="270" y="111" fill="#9CA3AF">Vaughan</text>
               </g>
             </svg>
           </div>
