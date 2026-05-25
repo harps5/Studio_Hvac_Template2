@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base ──────────────────────────────────────────────────────────────── */
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px; /* keep anchored targets clear of sticky nav */
+}
+
+body {
+  @apply bg-cream text-ink antialiased;
+  font-family: var(--font-body), 'Inter Tight', system-ui, -apple-system, sans-serif;
+  font-feature-settings: 'ss01', 'cv11';
+}
+
+/* Display headings — pick up Anton via the CSS variable set in layout. */
+.font-display {
+  font-family: var(--font-display), 'Anton', Impact, sans-serif;
+}
+
+/* ─── Focus ─────────────────────────────────────────────────────────────── */
+
+*:focus-visible {
+  outline: 2px solid #C2410C;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ─── Reusable atoms ────────────────────────────────────────────────────── */
+
+@layer components {
+  /* Both CTAs maintain identical metrics so the binary stays visually equal. */
+  .btn-base {
+    @apply inline-flex items-center justify-center gap-2
+           h-12 min-w-[176px] px-6
+           rounded-pill
+           text-sm font-semibold tracking-wide uppercase
+           transition-colors duration-150
+           focus-visible:outline-offset-4;
+  }
+  .btn-primary {
+    @apply btn-base bg-accent text-white hover:bg-accent-dark;
+  }
+  .btn-secondary-light {
+    @apply btn-base bg-transparent text-ink border-[1.5px] border-ink hover:bg-ink hover:text-white;
+  }
+  .btn-secondary-dark {
+    @apply btn-base bg-transparent text-white border-[1.5px] border-white hover:bg-white hover:text-ink;
+  }
+
+  .container-x {
+    @apply mx-auto w-full max-w-container px-6 md:px-8;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold tracking-[0.18em] uppercase text-accent;
+  }
+}
