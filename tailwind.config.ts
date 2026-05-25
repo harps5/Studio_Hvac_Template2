@@ -50,13 +50,12 @@ const config: Config = {
       },
       fontSize: {
         // Hero headline ramp.
-        // Sized to the floor of the brief's 64-96px desktop range: at a 7/5 grid
-        // split, a 96px cap caused the three-line stack with the location phrase
-        // to feel crowded in its column. 64px max keeps the wordmark register
-        // without crowding the third line, and reads as "calm" rather than
-        // "shouting" alongside the trust pill and subhead. Line-height bumped
-        // 0.95 → 1.0 for the same reason.
-        'display-hero': ['clamp(40px, 5.5vw, 64px)', { lineHeight: '1.0', letterSpacing: '-0.02em' }],
+        // Tuned per feedback: at a 7/5 grid split, 96px was crowding the third
+        // line and 64px read too small. 76px max lands in between, kept in the
+        // brief's 64-96 desktop range. Line-height 1.15 and letter-spacing
+        // -0.005em give the three-line stack visible breathing room between
+        // lines and between letters, without losing the bold-condensed register.
+        'display-hero': ['clamp(44px, 6vw, 76px)', { lineHeight: '1.15', letterSpacing: '-0.005em' }],
         'display-section': ['clamp(32px, 5vw, 56px)', { lineHeight: '1.0', letterSpacing: '-0.01em' }],
         'display-sub': ['clamp(24px, 3vw, 40px)', { lineHeight: '1.1', letterSpacing: '-0.01em' }],
         'display-stat': ['clamp(40px, 6vw, 72px)', { lineHeight: '1', letterSpacing: '-0.02em' }],
